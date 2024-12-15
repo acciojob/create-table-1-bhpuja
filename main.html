@@ -1,25 +1,40 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<meta charset=utf-8 /> 
-	<title>Insert row in a table</title> 
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Row Example</title>
 </head>
-
 <body>
-	<table id="sampleTable" border="1"> 
-		<tr><td>Row1 cell1</td> 
-		<td>Row1 cell2</td></tr> 
-		<tr><td>Row2 cell1</td> 
-		<td>Row2 cell2</td></tr> 
-	</table><br> 
-	
-	<input type="button" onclick="insert_Row()" value="Insert row">  
-    <script type="text/javascript" src="./script.js">
-</script>
+    <table id="sampleTable" border="1">
+        <tr>
+            <td>Row1 Cell1</td>
+            <td>Row1 Cell2</td>
+        </tr>
+        <tr>
+            <td>Row2 Cell1</td>
+            <td>Row2 Cell2</td>
+        </tr>
+    </table>
+    <br>
+    <button onclick="insert_Row()">Insert row</button>
 
+    <script>
+        function insert_Row() {
+            // Get the table element by its ID
+            const table = document.getElementById('sampleTable');
+
+            // Create a new row at the top of the table
+            const newRow = table.insertRow(0);
+
+            // Insert two new cells into the row
+            const cell1 = newRow.insertCell(0);
+            const cell2 = newRow.insertCell(1);
+
+            // Add text content to the new cells
+            cell1.textContent = 'New Cell1';
+            cell2.textContent = 'New Cell2';
+        }
+    </script>
 </body>
-
 </html>
